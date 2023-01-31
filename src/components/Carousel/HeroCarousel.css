@@ -1,0 +1,14 @@
+.heroCarousel {
+  height: 700px;
+}
+.heroCarousel h1 {
+  text-shadow: 2px 7px 5px rgb(0 0 0 / 30%), 0 -4px 10px hsl(0deg 0% 100% / 0%);
+}
+.heroCarousel__image {
+  width: 100%;
+  height: 100%;
+}
+.carousel-item,
+.carousel-inner {
+  height: 100% !important;
+}
