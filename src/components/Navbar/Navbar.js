@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { BsGlobe2 } from "react-icons/bs";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { navTitle } from "../../utils/data";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import ksaImg from "../../assets/ksa.png"
+import ukImg from "../../assets/uk.png"
 import Spinner from "../Spinner/Spinner";
 
 const Navbar = ({
@@ -15,7 +15,7 @@ const Navbar = ({
   loadingLogo = false,
 }) => {
   const [click, setClick] = useState(false);
-  const [dropLang, setDropLang] = useState(false);
+  // const [dropLang, setDropLang] = useState(false);
 
   const handleClick = () => setClick(!click);
 
@@ -49,17 +49,7 @@ const Navbar = ({
                 </NavLink>
               </li>
             ))}
-            <li>
-              <a
-                href="#contact"
-                className={"nav-links "}
-                onClick={() => {
-                  handleClick();
-                }}
-              >
-                {language === "en" ? "CONTACT US" : "تواصل معنا"}
-              </a>
-            </li>
+
             {/* <div className="flex items-center navbar__lang">
               <BsGlobe2 />
               <select
@@ -73,26 +63,18 @@ const Navbar = ({
               </select>
             </div> */}
             {/* New Select */}
-            <div className="flex items-center gap-1 relative navbar__lang">
-              <BsGlobe2 />
-
-              <div
-                className="relative  cursor-pointer"
-                onClick={() => setDropLang(!dropLang)}
-              >
-                <h4 className=""> {language === "en" ? "EN" : "عربي"}</h4>
-                <span className="flex-center absolute langs-arrows">
-                  {dropLang ? (
-                    <span className="flex-center">
-                      <IoMdArrowDropup />
-                    </span>
-                  ) : (
-                    <span className="flex-center">
-                      <IoMdArrowDropdown />
-                    </span>
-                  )}
-                </span>
-              </div>
+            <div className="navbar__lang">
+              {language === "en" ? (
+                <button>
+                  <img src={ksaImg} alt="" loading="lazy" />
+                  عربي
+                </button>
+              ) : (
+                <button>
+                  <img src={ukImg} alt="" loading="lazy" />
+                  English
+                </button>
+              )}
             </div>
           </ul>
         </div>

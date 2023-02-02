@@ -16,12 +16,14 @@
   --color-footer: #5a6498;
   --color-kayan-bg: #f5f5f5;
   --color-btn: #ff9100;
-  --color-btn-hover: #fca639;
+  --color-btn-hover: #d66f00;
 
   /* Kayan Colors */
-  --color-kayan: #444d5e;
+  --color-kayan-old: #444d5e;
+  --color-kayan: #202026;
   --color-kayan2: #f4e5d7;
   --color-kayan3: #f7f7f7;
+  --color-kayan4: #202026;
 }
 * {
   margin: 0;
@@ -54,7 +56,7 @@ p {
   margin-bottom: 0rem;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 button {
   cursor: pointer;
@@ -114,6 +116,6 @@ ul {
   padding-left: unset;
   margin-bottom: unset;
 
-  padding-left: unset !important;
-  margin-bottom: unset !important;
+  padding-left: unset ;
+  margin-bottom: unset ;
 }

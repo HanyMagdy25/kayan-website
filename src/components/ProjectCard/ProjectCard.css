@@ -1,0 +1,145 @@
+/* .project-grids .grid {
+  width: 33.33%;
+  float: left;
+  padding: 0 7.5px 15px;
+} */
+.projectCard__item {
+  position: relative;
+  height: 100%;
+}
+.projectCard__item__img {
+  position: relative;
+  z-index: 1;
+  height: 100% !important;
+}
+.projectCard__item__img img {
+  width: 100%;
+  /* height: 100% !important; */
+  height: 300px !important;
+  object-fit: cover;
+  vertical-align: middle;
+  max-width: 100%;
+}
+.projectCard__item__title{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 111;
+    transition: all .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.projectCard__item__title h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+.projectCard__item__title span{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+}
+.projectCard__item__title h2 a{
+  color: var(--color-white);
+  transition: all 0.2s;
+}
+.projectCard__item__title h2 a:hover{
+  color: var(--color-btn);
+}
+
+.projectCard__item__img::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #0c1145;
+  /* background: var(--color-kayan); */
+  content: "";
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+.projectCard__item:hover .projectCard__item__img::before {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+.left-border {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+
+.left-border::before {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  height: 1px;
+  width: 0;
+  background: #fff;
+  content: "";
+  transition: all 0.3s;
+}
+.left-border::after {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 0;
+  width: 1px;
+  background: #fff;
+  content: "";
+  transition: all 0.3s;
+}
+.right-border {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.right-border::before {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  height: 1px;
+  width: 0;
+  background: #fff;
+  content: "";
+  transition: all 0.3s;
+}
+.right-border::after {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  height: 0;
+  width: 1px;
+  background: #fff;
+  content: "";
+  transition: all 0.3s;
+}
+
+/* Hover */
+.projectCard__item:hover .left-border::before {
+  width: 160px;
+}
+.projectCard__item:hover .left-border::after {
+  height: 160px;
+}
+.projectCard__item:hover .right-border::before {
+  width: 160px;
+}
+.projectCard__item:hover .right-border::after {
+  height: 160px;
+}
+.projectCard__item:hover .projectCard__item__title {
+    opacity: 1;
+    visibility: visible;
+}
