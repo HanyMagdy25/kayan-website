@@ -6,7 +6,7 @@ const ProjectCard = ({ item }) => {
     <div className="grid col-12 col-md-6 col-lg-4 p-2">
       <div className="projectCard__item">
         <div className="projectCard__item__img">
-          <img src={item.image} alt="project" loading="lazy" />
+          <img src={item?.image[0]} alt="project" loading="lazy" />
           <div className="left-border"></div>
           <div className="right-border"></div>
         </div>

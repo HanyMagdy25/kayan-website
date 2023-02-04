@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { projectsData } from "../../utils/data";
 import "./ProjectInside.css";
 
 const ProjectInside = () => {
+  const [selectedImage, setSelectedImage] = useState(0);
   const param = useParams();
   const oneProject = projectsData.find((a) => a.id === parseInt(param.id));
 
@@ -38,19 +40,39 @@ const ProjectInside = () => {
                           Location : <span>7 Lake Street,London</span>
                         </li>
                         <li>
-                        Client  : <span>wpOceans</span>
+                          Client : <span>wpOceans</span>
                         </li>
                         <li>
-                        Architect  : <span>Harry Johnson</span>
+                          Architect : <span>Harry Johnson</span>
                         </li>
                         <li>
                           Location : <span>7 Lake Street,London</span>
                         </li>
-                        
                       </ul>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            {/* Start Images */}
+            <div className="projectInside__images-div">
+              <img
+                src={oneProject.image[selectedImage]}
+                alt="project"
+                className="projectInside__images-main"
+                loading="lazy"
+              />
+              <div className="projectInside__images-div-others">
+              {oneProject.image.map((item, index) => (
+                <img
+                  key={index}
+                  src={item}
+                  // src={`${url_main}/uploads/news/${articleInside.id}/${item}`}
+                  alt="news"
+                  onClick={() => setSelectedImage(index)}
+                  className={index === selectedImage ? "" : "some-blur"}
+                />
+              ))}
               </div>
             </div>
           </div>
